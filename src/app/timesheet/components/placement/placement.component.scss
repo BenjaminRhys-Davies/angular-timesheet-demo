@@ -1,0 +1,67 @@
+.placement {
+  padding: 1rem;
+
+  fieldset {
+    margin: 0 0 1rem 0;
+  }
+
+  label {
+    display: block;
+  }
+
+  &__input {
+    width: 100%;
+    border: 1px solid #c0c0c0;
+    padding: .6rem .2rem;
+  }
+
+  .ng-valid[required],
+  .ng-valid.required {
+    border-left: 5px solid #42A948;
+  }
+
+  .ng-invalid:not(form) {
+    border-left: 5px solid #a94442;
+  }
+
+  &__invalid {
+    background-color: #efefef;
+    margin: 0 0 1rem 0;
+    padding: .5rem;
+    border: 0 solid #c0c0c0;
+    border-width: 0 1px 1px;
+    border-radius-bottomleft: .5rem;
+    border-radius-bottomright: .5rem;
+  }
+
+  &__submit {
+    padding: .6rem;
+    float: right;
+    margin: 1rem 0 0 1rem;
+  }
+
+  &__buttons {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    text-align: right;
+
+    @media print {
+      display: none;
+    }
+
+    button {
+      margin: 0 .5rem;
+    }
+  }
+
+  &__timesheets-empty {
+    margin: 5rem 0;
+    text-align:center;
+    padding: 2rem;
+    background-color: #efefef;
+    background-color: #efefef;
+    border: 1px solid #c0c0c0;
+    border-radius: .5rem;
+  }
+}

@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'styles/reset';
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box; // Set this for sanity
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 1.6rem; // 16px default font
+  line-height: 1.333;
+}

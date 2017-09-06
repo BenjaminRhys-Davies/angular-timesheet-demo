@@ -1,0 +1,75 @@
+<form class="placement" *ngIf="!placement" (ngSubmit)="onSubmit(placementForm)" #placementForm="ngForm">
+
+  <fieldset>
+    <label for="candidate">Candidate Name</label>
+    <input class="placement__input placement__candidate" id="candidate" name="candidate" ngModel required #candidate="ngModel" />
+    <div [hidden]="candidate.valid || candidate.pristine" class="placement__invalid">
+      Candidate Name is required
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label for="client">Client Name</label>
+    <input class="placement__input placement__client" id="client" name="client" ngModel required #client="ngModel" />
+    <div [hidden]="client.valid || client.pristine" class="placement__invalid">
+      Client Name is required
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label for="role">Job Title</label>
+    <input class="placement__input placement__role" id="role" name="role" ngModel required #role="ngModel" />
+    <div [hidden]="role.valid || role.pristine" class="placement__invalid">
+      Job Title is required
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label for="start">Placement Start Date</label>
+    <input class="placement__input placement__start" type="date" id="start" name="start" ngModel required #start="ngModel" />
+    <div [hidden]="start.valid || start.pristine" class="placement__invalid">
+      Placement Start date is required
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label for="end">Placement End Date</label>
+    <input class="placement__input placement__end" type="date" id="end" name="end" ngModel required #end="ngModel" />
+    <div [hidden]="end.valid || end.pristine" class="placement__invalid">
+      Placement End date is required
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label for="type">Placement Type</label>
+    <select class="placement__input placement__type" id="type" name="type" [(ngModel)]="defaultPlacementType" required>
+      <option *ngFor="let type of placementTypes;" [value]="type.value">{{ type.title }}</option>
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <input class="placement__submit" type="submit" value="Generate Timesheets" [disabled]="!placementForm.form.valid" />
+  </fieldset>
+
+</form>
+
+<section class="placement" *ngIf="!!placement">
+  <div class="placement__buttons">
+    <button class="placement__print" (click)="onPrint()" *ngIf="placement.timesheets.length">Print</button>
+    <button class="placement__clear" (click)="onClear()">Clear</button>
+  </div>
+
+  <p class="placement__timesheets-empty" *ngIf="!placement.timesheets.length">
+    There are no timesheets available for the selected date range.
+  </p>
+
+  <app-timesheet *ngFor="let timesheet of placement.timesheets; let i = index;"
+    [id]="i + 1"
+    [type]="placement.type"
+    [client]="placement.client"
+    [candidate]="placement.candidate"
+    [role]="placement.role"
+    [start]="timesheet.start"
+    [end]="timesheet.end">
+  </app-timesheet>
+</section>

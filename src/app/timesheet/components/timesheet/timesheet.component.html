@@ -1,0 +1,31 @@
+<table class="timesheet"
+  [class.timesheet--weekly]="type === placementType.Weekly">
+  <thead>
+    <tr>
+      <th colspan="3">Timesheet #<span class="timesheet__id">{{id}}</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Client Name</td>
+      <td class="timesheet__client" colspan="2">{{client}}</td>
+    </tr>
+    <tr>
+      <td>Candidate Name</td>
+      <td class="timesheet__candidate" colspan="2">{{candidate}}</td>
+    </tr>
+    <tr>
+      <td>Job Title</td>
+      <td class="timesheet__role" colspan="2">{{role}}</td>
+    </tr>
+    <tr>
+      <td>Date range</td>
+      <td class="timesheet__start">{{start}}</td>
+      <td class="timesheet__end">{{end}}</td>
+    </tr>
+    <tr>
+      <td>Billable hours</td>
+      <td class="timesheet__billable" colspan="2"></td>
+    </tr>
+  </tbody>
+</table>

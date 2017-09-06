@@ -1,0 +1,29 @@
+.app {
+  margin: 0 0 6rem;
+
+  &__header {
+    text-align: center;
+    margin: 2rem 0 0;
+
+    @media print {
+      display: none;
+    }
+  }
+
+  &__footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #efefef;
+    background-color: #111;
+    height: 5rem;
+
+    p {
+      padding: 1rem;
+    }
+
+    @media print {
+      display: none;
+    }
+  }
+}

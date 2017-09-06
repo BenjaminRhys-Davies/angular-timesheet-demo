@@ -1,0 +1,31 @@
+.timesheet {
+  border: 1px solid #bbb;
+  border-spacing: .2rem;
+  border-collapse: collapse;
+  margin: 2rem 1rem;
+  font-size: 80%;
+  page-break-after: auto;
+  page-break-inside: avoid;
+  background-color: #e0ffff;
+
+  @media print {
+    background: none;
+  }
+
+  &--weekly {
+    background-color: #ffffe0;
+  }
+
+  th {
+    background-color: #ededed;
+    color: #636363;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  th,
+  td {
+    border: 1px solid #bbb;
+    padding: .5rem;
+  }
+}
