@@ -1,28 +1,66 @@
-# AngularTimesheetDemo
+# Timesheet Technical Demonstration
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.3.
+The purpose of this demonstration is to exhibit familiarity with next generation Angular frontend technologies,
+programming patterns and to provide a sample of what clean and reusable code means to me.
 
+## Disclaimer
+
+This project has limitations and was time-bound to no more than 3 days - inhibiting the depth of many professional behaviours, including:
+
+ * localisation, browser, user
+ * auto-prefix scss
+ * media queries
+ * build-agent deployment
+ * ...
+ 
+Therefore the design reflects a personal goal to effectively demonstrate key principles, facilitate peer review and start a ongoing conversation.
+
+## User Interface
+
+The UI is a simple mobile-first interface (with all measurements in REMs), developed and tested within Chrome.
+
+# Pre-Requisits
+
+Both the Angular-cli and this project have dependencies that require Node 6.9.0 or higher, together with NPM 3 or higher.
+
+# Getting started
+
+Documentation of project features can be found within the `gherkins/` directory.
+Checkout or unzip this code to your local machine.
+Run `npm install` to download the dependent (Angular) libraries.
+Run `npm run start` to enable the dev server to run the project locally
+Browse to `https://localhost:4200/`
+ 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run start` for the dev server. Navigate to `http://localhost:4200/`.
+The server will watch for any source files changes and automatically reload.
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Whilst available within the angular-cli, no scaffolding tools were used to generate file structure or code for this project.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm test` to execute the 81 unit test specs in Chrome via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Generating code coverage report
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+Run `npm run coverage` to generate a 100% unit test coverage report, which can then be opened from the `coverage/` directory.
+
+## Running E2E tests
+
+Run `npm run e2e` to execute the complete set of acceptance tests in Chrome via [Protractor](http://www.protractortest.org).
+
+## Build
+
+Run `npm run build` to build the project.
+The build artifacts will be stored in the `dist/` directory. Use `--prod` flag for a production build.
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+If you have issues please:
+
+ * ensure you have Node v6.9.0+ and vNPM 3+
+ * see the latest [Angular browser matrix](https://angular.io/docs/ts/latest/guide/browser-support.html)
+ * contact the author (me)
